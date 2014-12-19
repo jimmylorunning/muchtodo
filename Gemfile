@@ -6,6 +6,14 @@ gem 'rails', '4.0.2'
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
 	gem 'sqlite3'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'simplecov'
+  gem 'debugger'
 end
 
 group :production do
