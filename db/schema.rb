@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218175126) do
+ActiveRecord::Schema.define(version: 20141219210618) do
 
   create_table "todos", force: true do |t|
     t.string   "task"
-    t.string   "priority"
-    t.string   "status"
+    t.integer  "priority",   limit: 255
+    t.integer  "status",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

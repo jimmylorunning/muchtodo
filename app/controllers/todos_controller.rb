@@ -22,4 +22,12 @@ class TodosController < ApplicationController
   def destroy
   end
 
+  private
+
+    # rails 4 - instead of attr_accessible: https://github.com/rails/strong_parameters
+    def todos_params
+      # for create operation
+      params.require(:task, :priority, :status)
+    end
+
 end

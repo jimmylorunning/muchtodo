@@ -8,7 +8,6 @@ Given /the following todos exist/ do |todos_table|
 end
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
-	debugger
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
   (page.body =~ Regexp.new(e1)).should < (page.body =~ Regexp.new(e2))
