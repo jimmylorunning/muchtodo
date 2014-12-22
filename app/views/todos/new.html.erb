@@ -1,0 +1,12 @@
+<%= form_for(@todo) do |f| %>
+	<%= f.label :task %>
+	<%= f.text_field :task %>
+
+	<%= f.label :priority %>
+	<%= f.text_field :priority %>
+
+	<%= f.label :status %>
+	<%= f.text_field :status %>
+
+	<%= f.submit "Add" %>
+<% end %>

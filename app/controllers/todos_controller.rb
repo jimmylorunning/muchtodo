@@ -8,9 +8,11 @@ class TodosController < ApplicationController
   end
 
   def new
+    @todo = Todo.new
   end
 
   def create
+    redirect_to todos_path
   end
 
   def edit
