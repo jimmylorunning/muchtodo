@@ -1,5 +1,7 @@
 class Todo < ActiveRecord::Base
 
+	attr_accessible :task, :priority, :status
+
 	PRIORITIES = ["high", "medium", "low"]
 	STATUSES = ["to do", "done"]
 
@@ -19,12 +21,12 @@ class Todo < ActiveRecord::Base
 
 	def priority=(str_value)
 		p = write_attribute(:priority, PRIORITIES.index(str_value))
-		raise "Error: {str_value} is not a valid priority" if p.nil?
+		raise "Error: Invalid priority" if p.nil?
 	end
 
 	def status=(str_value)
 		s = write_attribute(:status, STATUSES.index(str_value))
-		raise "Error: {str_value} is not a valid status" if s.nil?
+		raise "Error: Invalid status" if s.nil?
 	end
 
 	def priority

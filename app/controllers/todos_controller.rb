@@ -12,8 +12,8 @@ class TodosController < ApplicationController
   end
 
   def create
-    # require not working for some reason?
-    @todo = Todo.create!(params.permit(:task, :priority, :status))
+    # investigate strong params -- not working, or don't understand somehow
+    @todo = Todo.create!(params[:todo])
     redirect_to todos_path
   end
 
@@ -25,13 +25,5 @@ class TodosController < ApplicationController
 
   def destroy
   end
-
-  private
-
-    # rails 4 - instead of attr_accessible: https://github.com/rails/strong_parameters
-#    def todos_params
-      # for create operation
-#      params.require(:task, :priority, :status)
-#    end
 
 end

@@ -29,6 +29,7 @@ end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'protected_attributes'    # allows attr_acessible
 gem 'jquery-rails'
 gem 'turbolinks'							# makes following links faster
 gem 'jbuilder', '~> 1.2'			# Build JSON APIs with ease.
