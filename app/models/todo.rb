@@ -7,14 +7,24 @@ class Todo < ActiveRecord::Base
 		self.find_all_by_status('to do', order: 'priority')
 	end
 
+	def self.priorities
+		PRIORITIES
+	end
+
+	def self.statuses
+		STATUSES
+	end
+
 	# http://api.rubyonrails.org/classes/ActiveRecord/Base.html#class-ActiveRecord%3a%3aBase-label-Overwriting+default+accessors
 
 	def priority=(str_value)
-		write_attribute(:priority, PRIORITIES.index(str_value))
+		p = write_attribute(:priority, PRIORITIES.index(str_value))
+		raise "Error: {str_value} is not a valid priority" if p.nil?
 	end
 
 	def status=(str_value)
-		write_attribute(:status, STATUSES.index(str_value))
+		s = write_attribute(:status, STATUSES.index(str_value))
+		raise "Error: {str_value} is not a valid status" if s.nil?
 	end
 
 	def priority
