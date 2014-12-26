@@ -8,8 +8,8 @@ Scenario: Add a task
   When I am on the homepage
    And I click on "Add"
    And I fill in "Task" with "Write paper"
-   And I fill in "Priority" with "high"
-   And I fill in "Status" with "to do"
+   And I select "high" from "Priority"
+   And I select "to do" from "Status"
    And I press "Add"
   Then I should be on the todos page
    And I should see "Write paper"

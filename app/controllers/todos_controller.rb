@@ -8,7 +8,9 @@ class TodosController < ApplicationController
   end
 
   def new
-    @todo = Todo.new
+    @todo = Todo.new(:priority => 'high', :status => 'to do')
+    @priorities = Todo.priorities
+    @statuses = Todo.statuses
   end
 
   def create
