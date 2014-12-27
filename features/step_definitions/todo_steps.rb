@@ -12,3 +12,9 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  page.body is the entire content of the page as a string.
   (page.body =~ Regexp.new(e1)).should < (page.body =~ Regexp.new(e2))
 end
+
+When /^(?:|I )press "([^"]*)" on "([^"]*)"$/ do |button, div|
+	within('div#' + div.gsub(/\s+/,'')) do
+	  click_button(button)
+	end
+end
