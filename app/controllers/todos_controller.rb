@@ -20,9 +20,15 @@ class TodosController < ApplicationController
   end
 
   def edit
+    @todo = Todo.find_by_id(params[:id])
+    @priorities = Todo.priorities
+    @statuses = Todo.statuses
   end
 
   def update
+    @todo = Todo.find params[:id]
+    @todo.update_attributes(params[:todo])
+    redirect_to todos_path
   end
 
   def destroy

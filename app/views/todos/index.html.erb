@@ -1,5 +1,5 @@
 <% @todos.each do |todo|  %>
-<%= todo.task %>
+<%= link_to todo.task, edit_todo_path(:id => todo.id) %><br />
 <% end %>
 <%= link_to "Add", new_todo_path %>
 <%= debug(params) if Rails.env.development? %>
