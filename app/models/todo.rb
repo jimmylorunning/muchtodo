@@ -10,7 +10,7 @@ class Todo < ActiveRecord::Base
 	end
 
 	def self.tasks_done
-		self.where(:status => STATUSES.index('done')).order(date_done: :desc)
+		self.where(:status => STATUSES.index('done')).order(date_done: :desc).limit(5)
 	end
 
 	def update_attributes(params)

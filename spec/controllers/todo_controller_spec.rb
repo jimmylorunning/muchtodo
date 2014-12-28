@@ -114,4 +114,20 @@ describe TodosController, :type => :controller do
 
 	end
 
+	describe 'destroy action' do
+		it 'should ask model to destroy Todo task' do
+			fake_todo = double('Call mom')
+			Todo.stub(:find).and_return(fake_todo)
+			fake_todo.should_receive(:destroy)
+			delete :destroy, {:id => '1'}
+		end
+
+		it 'should redirect to todos page' do
+			fake_todo = double('Call mom', :destroy => true)
+			Todo.stub(:find).and_return(fake_todo)
+			delete :destroy, {:id => '1'}
+			response.should redirect_to todos_path
+		end
+	end
+
 end

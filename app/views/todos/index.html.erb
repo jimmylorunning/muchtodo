@@ -5,6 +5,7 @@ Index page
 	<%= link_to todo.task, edit_todo_path(:id => todo.id) %><br />
 	<%= f.hidden_field :status, value: 'done' %>
 	<%= f.submit "Done!" %>
+	<%= button_to 'Delete!', todo_path(todo), :method => 'delete', data: {confirm: 'Are you sure?'} %>
 	</div>
 	<% end %>
 <% end %>
