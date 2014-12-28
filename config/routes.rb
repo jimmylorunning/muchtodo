@@ -2,6 +2,9 @@ Muchtodo::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  get 'todos/done' => 'todos#done', :as => :done
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root to: 'todos#index'
@@ -15,6 +18,7 @@ Muchtodo::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :todos
+
 
   # Example resource route with options:
   #   resources :products do

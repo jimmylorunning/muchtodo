@@ -6,7 +6,11 @@ class Todo < ActiveRecord::Base
 	STATUSES = ["to do", "done"]
 
 	def self.tasks_to_do
-		self.find_all_by_status('to do', order: 'priority')
+		self.where(:status => STATUSES.index('to do')).order(:priority)
+	end
+
+	def self.tasks_done
+		self.where(:status => STATUSES.index('done')).order(:priority)
 	end
 
 	def self.priorities

@@ -16,8 +16,15 @@ Background: todos in the database
   | Pay rent                 | high          | to do  |
   | Make bed                 | medium        | done   |
 
-Scenario: Edit a task
+Scenario: Mark a task as done
   When I am on the homepage
    And I press "Done!" on "Cook food"
   Then I should be on the todos page
    And I should not see "Cook food"
+
+Scenario: Visit done page
+  When I am on the homepage
+   And I press "Done!" on "Cook food"
+   And I follow "See recently done"
+  Then I should be on the done page
+   And I should see "Cook food"

@@ -7,6 +7,11 @@ class TodosController < ApplicationController
   def show
   end
 
+  def done
+    @todos = Todo.tasks_done
+#    render "index"
+  end
+
   def new
     @todo = Todo.new(:priority => 'high', :status => 'to do')
     @priorities = Todo.priorities

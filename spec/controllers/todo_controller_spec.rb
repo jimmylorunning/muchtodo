@@ -16,6 +16,21 @@ describe TodosController, :type => :controller do
 		end
 	end
 
+	describe 'done' do
+		it 'should ask the model for tasks to do' do
+			Todo.should_receive(:tasks_done)
+			get :done
+		end
+
+		it 'should make tasks available to view' do
+			fake_todos = double(['Feed Wendell', 'Buy TP'])
+			Todo.stub(:tasks_done).and_return(fake_todos)
+			get :done
+			assigns(:todos).should == fake_todos
+		end
+
+	end
+
 	describe 'create action' do
 
 		it "should tell the model to create new Todo" do

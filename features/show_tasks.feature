@@ -21,3 +21,8 @@ Scenario: visit the homepage
   Then I should see "Pay rent" before "Buy Christmas presents"
    And I should see "Buy Christmas presents" before "Call mom"
    And I should not see "Feed Wendell"
+
+Scenario: visit the done page
+	When I am on the done page
+	Then I should see "Feed Wendell"
+	 And I should see "Make bed"

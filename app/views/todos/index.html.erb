@@ -1,3 +1,4 @@
+Index page
 <% @todos.each do |todo|  %>
 	<div id="<%= todo.task.gsub(/\s+/, '') %>">
 	<%= form_for :todo, :url => {:action => 'update', :id => todo.id}, method: :patch do |f| %>
@@ -8,4 +9,5 @@
 	<% end %>
 <% end %>
 <%= link_to "Add", new_todo_path %>
+<%= link_to "See recently done", done_path %>
 <%= debug(params) if Rails.env.development? %>
