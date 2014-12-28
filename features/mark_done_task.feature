@@ -22,7 +22,7 @@ Scenario: Mark a task as done
   Then I should be on the todos page
    And I should not see "Cook food"
 
-Scenario: Visit done page
+Scenario: Done items should display in order of most recent
   When I am on the homepage
    And I press "Done!" on "Pay rent"
    And I press "Done!" on "Cook food"
@@ -30,7 +30,7 @@ Scenario: Visit done page
   Then I should be on the done page
    And I should see "Cook food" before "Pay rent"
 
-Scenario: Visit done page
+Scenario: Done items should display in order of most recent
   When I am on the homepage
    And I press "Done!" on "Cook food"
    And I press "Done!" on "Pay rent"

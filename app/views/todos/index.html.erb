@@ -1,14 +1,29 @@
-Index page
+<h1>My To Do List</h1>
+<table>
+	<tr>
+		<th>Task</th>
+		<th>Priority</th>
+		<th colspan="2">Options</th>
+	</tr>
 <% @todos.each do |todo|  %>
-	<div id="<%= todo.task.gsub(/\s+/, '') %>">
-	<%= form_for :todo, :url => {:action => 'update', :id => todo.id}, method: :patch do |f| %>
-	<%= link_to todo.task, edit_todo_path(:id => todo.id) %><br />
-	<%= f.hidden_field :status, value: 'done' %>
-	<%= f.submit "Done!" %>
-	<%= button_to 'Delete!', todo_path(todo), :method => 'delete', data: {confirm: 'Are you sure?'} %>
-	</div>
-	<% end %>
+<tr id="<%= todo.task.gsub(/\s+/, '') %>"><td>
+		<%= link_to todo.task, edit_todo_path(:id => todo.id) %>
+	</td>
+	<td>
+		<%= todo.priority %>
+	</td>
+	<td>
+		<%= form_for :todo, :url => {:action => 'update', :id => todo.id}, method: :patch do |f| %>
+			<%= f.hidden_field :status, value: 'done' %>
+			<%= f.submit "Done!" %>
+		<% end %>
+	</td>
+	<td>
+		<%= button_to 'Delete!', todo_path(todo), :method => 'delete', data: {confirm: 'Are you sure?'} %>
+	</td>
+</tr>
 <% end %>
-<%= link_to "Add", new_todo_path %>
+</table>
+<%= link_to "Add", new_todo_path %><br />
 <%= link_to "See recently done", done_path %>
 <%= debug(params) if Rails.env.development? %>

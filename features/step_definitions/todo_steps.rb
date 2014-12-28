@@ -14,7 +14,7 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
 end
 
 When /^(?:|I )press "([^"]*)" on "([^"]*)"$/ do |button, div|
-	within('div#' + div.gsub(/\s+/,'')) do
+	within('#' + div.gsub(/\s+/,'')) do
 	  click_button(button)
 	end
 end
