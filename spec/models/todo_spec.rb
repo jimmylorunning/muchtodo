@@ -35,4 +35,15 @@ describe Todo do
 			end
 		end
 	end
+	describe "update attributes on an undone task" do
+		context "with status done" do
+			before do
+				@fake = FactoryGirl.create(:todo, :status => 'to do')
+			end
+			it "should set the date_done" do
+				@fake.update_attributes({:status => 'done'})
+				@fake.date_done.should_not == nil
+			end
+		end
+	end
 end

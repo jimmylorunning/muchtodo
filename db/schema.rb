@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219210618) do
+ActiveRecord::Schema.define(version: 20141228182346) do
 
   create_table "todos", force: true do |t|
     t.string   "task"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141219210618) do
     t.integer  "status",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "date_done"
   end
 
 end

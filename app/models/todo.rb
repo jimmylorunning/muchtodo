@@ -1,6 +1,6 @@
 class Todo < ActiveRecord::Base
 
-	attr_accessible :task, :priority, :status
+	attr_accessible :task, :priority, :status, :date_done
 
 	PRIORITIES = ["high", "medium", "low"]
 	STATUSES = ["to do", "done"]
@@ -10,7 +10,14 @@ class Todo < ActiveRecord::Base
 	end
 
 	def self.tasks_done
-		self.where(:status => STATUSES.index('done')).order(:priority)
+		self.where(:status => STATUSES.index('done')).order(date_done: :desc)
+	end
+
+	def update_attributes(params)
+    if ((params[:status] == 'done') && (!self.done?))
+      params[:date_done] = DateTime.now
+    end
+		super
 	end
 
 	def self.priorities
@@ -39,6 +46,10 @@ class Todo < ActiveRecord::Base
 
 	def status
 		STATUSES[read_attribute(:status)]
+	end
+
+	def done?
+		self.status == 'done' && !self.date_done.nil?
 	end
 
 end
