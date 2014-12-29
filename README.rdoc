@@ -1,28 +1,11 @@
-== README
+== Much To Do
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my first non-tutorial guided Rails app! It's a simple to do list, for learning purposes only, but it was still pretty challenging.
 
-Things you may want to cover:
+* I didn't include user login / auth stuff because I wanted this to be a one-week project, and it was already quite challenging. That will be a goal for my next app, hopefully.
 
-* Ruby version
+* Testing was a very important learning goal for me here. I used Cucumber for user stories and Rspec for unit tests. Testing was the hardest part of this project, as it was hard to think about how to test something before I knew exactly how to code it.
 
-* System dependencies
+* In the future I want to learn how to use AJAX calls or some other front end library to update the page rather than doing an HTTP request every time for such a small app. Maybe I'll read up on backbone.js or something similar.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Feel free to send me feedback on my code. And if you're also just learning, I hope my code will help your learning as well. Thanks!
