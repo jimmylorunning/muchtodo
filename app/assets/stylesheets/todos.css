@@ -2,3 +2,19 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.todo-list a {
+	color: #313A8F;
+}
+
+.high {
+	background-color: #FDAEAB;
+}
+
+.medium {
+	background-color: #F9CDAD;
+}
+
+.low {
+	background-color: #FFF0E0;
+}

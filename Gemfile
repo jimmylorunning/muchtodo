@@ -34,6 +34,9 @@ gem 'jquery-rails'
 gem 'turbolinks'							# makes following links faster
 gem 'jbuilder', '~> 1.2'			# Build JSON APIs with ease.
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'      # automatically adds the proper vendor prefixes to your CSS code when it is compiled
+
 #group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
 #  gem 'sdoc', require: false

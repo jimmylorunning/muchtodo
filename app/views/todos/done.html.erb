@@ -1,9 +1,7 @@
-Recently Done page
-<ul>
+<h1>Good Job Doing These!</h1>
+<ul class="list-group">
 <% @todos.each do |todo|  %>
-	<div id="<%= todo.task.gsub(/\s+/, '') %>">
-	<li><%= todo.task %></li>
-	</div>
+	<li class="list-group-item <%= todo.priority %>"><%= todo.task %></li>
 <% end %>
 </ul>
 <%= link_to "Back to To Do list", todos_path %>

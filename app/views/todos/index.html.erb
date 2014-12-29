@@ -1,12 +1,12 @@
 <h1>My To Do List</h1>
-<table>
+<table class="table todo-list">
 	<tr>
 		<th>Task</th>
 		<th>Priority</th>
 		<th colspan="2">Options</th>
 	</tr>
 <% @todos.each do |todo|  %>
-<tr id="<%= todo.task.gsub(/\s+/, '') %>"><td>
+<tr id="<%= todo.task.gsub(/\s+/, '') %>" class="<%= todo.priority %>"><td>
 		<%= link_to todo.task, edit_todo_path(:id => todo.id) %>
 	</td>
 	<td>
@@ -15,15 +15,19 @@
 	<td>
 		<%= form_for :todo, :url => {:action => 'update', :id => todo.id}, method: :patch do |f| %>
 			<%= f.hidden_field :status, value: 'done' %>
-			<%= f.submit "Done!" %>
+			<%= f.submit "Done!", class: 'btn btn-default btn-sm' %>
 		<% end %>
 	</td>
 	<td>
-		<%= button_to 'Delete!', todo_path(todo), :method => 'delete', data: {confirm: 'Are you sure?'} %>
+		<%= button_to 'Delete!', todo_path(todo), :method => 'delete', data: {confirm: 'Are you sure?'}, class: 'btn btn-default btn-sm' %>
 	</td>
 </tr>
 <% end %>
 </table>
-<%= link_to "Add", new_todo_path %><br />
+<div align="center">
+<%= link_to "Add", new_todo_path, class: 'btn btn-default btn-lg' %>
+<br />
+<br />
 <%= link_to "See recently done", done_path %>
+</div>
 <%= debug(params) if Rails.env.development? %>
