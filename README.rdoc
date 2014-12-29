@@ -1,6 +1,6 @@
 == Much To Do
 
-This is my first non-tutorial guided Rails app! It's a simple to do list, for learning purposes only, but it was still pretty challenging.
+This is my first non-tutorial guided Rails app! It's a simple to do list, for learning purposes only, but it was still pretty challenging. You can play with it {on Heroku}[https://intense-beyond-1562.herokuapp.com/todos].
 
 * I didn't include user login / auth stuff because I wanted this to be a one-week project, and it was already quite challenging. That will be a goal for my next app, hopefully.
 

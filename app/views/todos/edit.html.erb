@@ -1,4 +1,4 @@
-<h1>Edit a New Task</h1>
+<h1>Edit a Task</h1>
 <%= form_for @todo, :html => {class: 'form-horizontal'} do |f| %>
 
 	<div class="form-group">
@@ -24,7 +24,8 @@
 
 	<div class="form-group">
 	<div class="col-sm-offset-2 col-sm-10">
-		<%= f.submit "Update", class: 'btn btn-default' %>
+		<%= f.submit "Update", class: 'btn btn-default' %> &nbsp;
+		<%= link_to "Cancel", todos_path, class: 'btn btn-default' %>
 	</div>
 	</div>
 <% end %>
