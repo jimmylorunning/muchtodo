@@ -18,7 +18,7 @@ end
 
 group :production do
 	gem 'pg'
-  gem 'rails_serve_static_assets'
+  gem 'rails_12factor'
 end
 
 group :assets do
