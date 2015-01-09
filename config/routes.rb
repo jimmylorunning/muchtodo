@@ -17,7 +17,7 @@ Muchtodo::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :todos
+  resources :todos, except: :show
 
 
   # Example resource route with options:
