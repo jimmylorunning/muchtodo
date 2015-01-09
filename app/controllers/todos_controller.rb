@@ -1,15 +1,11 @@
 class TodosController < ApplicationController
 
-	def index
+  def index
     @todos = Todo.tasks_to_do
-	end
-
-  def show
   end
 
   def done
     @todos = Todo.tasks_done
-#    render "index"
   end
 
   def new
